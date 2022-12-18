@@ -1,5 +1,5 @@
 import React from 'react';
-import ForgerPasswordContainer from '../../../components/forget-password/';
+import ForgerPasswordContainer from 'components/forgetPassword';
 function ForgetPassword() {
   return <ForgerPasswordContainer />;
 }
