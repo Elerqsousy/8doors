@@ -30,6 +30,6 @@ export default function middleware(req: any) {
   ) {
     // rewrite to the current hostname under the pages/sites folder
     // the main logic component will happen in pages/sites/[site]/index.tsx
-    return NextResponse.rewrite(`${isDev ? origin : ''}/_sites/${currentHost}${pathname}`);
+    return NextResponse.rewrite(`${origin}/_sites/${currentHost}${pathname}`);
   }
 }
