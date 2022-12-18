@@ -11,18 +11,17 @@ export default function middleware(req: any) {
   // If localhost, assign the host value manually
   // If prod, get the custom domain/subdomain value by removing the root URL
   // (in the case of "test.vercel.app", "vercel.app" is the root URL)
-  const isDev = process.env.NODE_ENV !== 'production'
   const currentHost =
-      !isDev 
+      process.env.NODE_ENV == 'production'
       ? hostname?.replace(`.8doors-ramadanmoheyeldeen.vercel.app`, '') // PUT YOUR DOMAIN HERE
       : hostname?.replace(`.localhost:3000`, '');
 
   // Prevent security issues – users should not be able to canonically access
   // the pages/sites folder and its respective contents. This can also be done
   // via rewrites to a custom 404 page
-  // if (pathname.startsWith(`/_sites`)) {
-  //   return new Response(null, { status: 404 });
-  // }
+  if (pathname.startsWith(`/_sites`)) {
+    return new Response(null, { status: 404 });
+  }
 
   if (
     !pathname.includes('.') && // exclude all files in the public folder
@@ -30,6 +29,6 @@ export default function middleware(req: any) {
   ) {
     // rewrite to the current hostname under the pages/sites folder
     // the main logic component will happen in pages/sites/[site]/index.tsx
-    return NextResponse.rewrite(`${origin}/_sites/${currentHost}${pathname}`);
+     return NextResponse.rewrite(`${origin}/_sites/${currentHost}${pathname}`);
   }
 }
