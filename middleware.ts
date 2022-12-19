@@ -14,7 +14,7 @@ export default function middleware(req: any) {
   console.log("hostname", hostname)
   const currentHost =
       process.env.NODE_ENV == 'production'
-      ? hostname?.replace(`8doors.vercel.app`, '') // PUT YOUR DOMAIN HERE
+      ? hostname?.replace(`.8doors-hd5fh756r-ramadanmoheyeldeen.vercel.app`, '') // PUT YOUR DOMAIN HERE
       : hostname?.replace(`.localhost:3000`, '');
 
   // Prevent security issues – users should not be able to canonically access
