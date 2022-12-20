@@ -1,27 +1,38 @@
-import React from 'react';
-
+import CustomInput from 'components/shared/customInput';
+import React, { useTransition } from 'react';
+import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/router';
+import { GetStaticProps } from 'next';
+type Props = {
+  // Add custom props here
+};
 function SignIn() {
+  const { t } = useTranslation('common');
+  const router = useRouter();
+  console.log(router);
   return (
     <div className="container flex items-center justify-center" style={{ minHeight: '100vh' }}>
       <div className="card px-10 py-10 w-96">
-        <h1 className="text-3xl">Sigin</h1>
-        <p className="text-slate-500">sign in to continue</p>
+        <h1 className="text-3xl">{t('signin.signin')}</h1>
+        <p className="text-slate-500">{t('signin.singContinue')}</p>
         <form>
-          <label className="block mt-10">
-            <span className="block text-sm font-medium text-slate-700">Email</span>
-            <input
-              type="email"
-              className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-            />
-          </label>
-          <label className="block mt-10">
-            <span className="block text-sm font-medium text-slate-700">Password</span>
-            <input
-              type="email"
-              className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-12"
-            />
-          </label>
-          <button className="mt-10 w-full p-4 bg-sky-500/100">SignIn</button>
+          <CustomInput label="Email" />
+          <CustomInput label="Password" />
+          <p className="mt-3 text-sm text-slate-500 text-center">
+            <b>Forget Password </b>
+            <Link href="/forget-password">
+              <u>Reset password</u>
+            </Link>
+          </p>
+          <button className="mt-10 w-full rounded p-4 bg-sky-500/100">SignIn</button>
+          <p className="mt-3 text-sm text-slate-500 text-center">
+            <b>{"Don't have account "}</b>
+            <Link href="/signup">
+              <u>create an Account</u>
+            </Link>
+          </p>
         </form>
       </div>
     </div>

@@ -1,0 +1,11 @@
+{
+    "signin": {
+        "signin": "Sign in",
+        "singContinue": "Sign in to continue",
+        "forgetPassword": "Forget Password",
+        "resetPassword": "Reset password",
+        "signIn": "SignIn",
+        "donotHaveAccount": "Don't have account",
+        "createAccount": "Create an Account"
+    }
+}
