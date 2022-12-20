@@ -78,7 +78,7 @@ function SignUp() {
                 type="password"
                 value={value}
                 onChange={onChange}
-                error={errors?.email ? t('signup.pleaseConfirm') : ''}
+                error={errors?.confirmPassword ? t('signup.pleaseConfirm') : ''}
                 onBlur={onBlur}
               />
             )}
