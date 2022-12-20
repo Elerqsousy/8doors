@@ -1,6 +1,15 @@
 import React from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 
 function SignUp() {
+  const { t } = useTranslation('common');
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data: any) => console.log(data);
   return (
     <div className="container flex items-center justify-center" style={{ minHeight: '100vh' }}>
       <div className="card px-10 py-10 w-96">
