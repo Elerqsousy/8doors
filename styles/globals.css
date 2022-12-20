@@ -4,15 +4,21 @@
 
 @layer components {
   .card {
-    background-color: theme('colors.white');
-    border-radius: theme('borderRadius.lg');
-    padding: theme('spacing.6');
-    box-shadow: theme('boxShadow.xl');
+    background-color: theme("colors.white");
+    border-radius: theme("borderRadius.lg");
+    padding: theme("spacing.6");
+    box-shadow: theme("boxShadow.xl");
+  }
+}
+
+@layer base {
+  html {
+    font-family: Cairo;
   }
 }
 
 .signup-container {
-  background-image: url('https://png.pngtree.com/background/20210706/original/pngtree-doctors-medical-technology-banner-background-poster-picture-image_16119.jpg'); /* The image used */
+  background-image: url("https://png.pngtree.com/background/20210706/original/pngtree-doctors-medical-technology-banner-background-poster-picture-image_16119.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 90vh; /* You must set a specified height */
   background-position: center; /* Center the image */
