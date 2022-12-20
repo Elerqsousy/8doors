@@ -2320,6 +2320,11 @@ quick-lru@^5.1.1:
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+randomized-string@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/randomized-string/-/randomized-string-1.2.7.tgz#4bfdee34972af09ef0c7d1e355917ef36ae1da1c"
+  integrity sha512-oNiFyG4LJm1J/rKtdax+sqJdpI3/0kA2IHqczJskmJ2b0f7VCCkw95ftkuRIuOvhvFv/+THpI0qOty/1oNNJ1w==
+
 react-dom@18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"

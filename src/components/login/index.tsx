@@ -1,11 +1,12 @@
 import CustomInput from 'components/shared/customInput';
-import React, { useTransition } from 'react';
+import React, { useState, useTransition } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next';
 import { useForm, Controller } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 
 type Props = {
   // Add custom props here
@@ -17,7 +18,25 @@ function SignIn() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const [error, setError] = useState('');
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const { accounts } = useSelector((state) => state?.account);
+  const onSubmit = (data: any) => {
+    const user = accounts.find(
+      (account) => account?.email === data?.email && account?.password === data?.password
+    );
+
+    if (user) {
+      router.push('/');
+    } else {
+      setError('User is not registered yet!!');
+      setTimeout(() => {
+        setError('');
+      }, 3000);
+    }
+  };
   return (
     <div
       className="flex items-center justify-center signup-container"
@@ -39,6 +58,7 @@ function SignIn() {
                 value={value}
                 onChange={onChange}
                 onBlur={onBlur}
+                type="email"
               />
             )}
             name="email"
@@ -66,6 +86,7 @@ function SignIn() {
               <u>{' ' + t('signin.resetPassword')}</u>
             </Link>
           </p>
+          {error && <p className="text-red-500 text-center text-sm mt-2">{error}</p>}
           <button type="submit" className="mt-10 w-full rounded p-4 bg-sky-500/100">
             {t('signin.signIn')}
           </button>

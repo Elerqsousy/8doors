@@ -1,9 +1,12 @@
 import CustomInput from 'components/shared/customInput';
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
-
+import { generate } from 'randomized-string';
+import { useDispatch } from 'react-redux';
+import { addAccount } from 'redux/reducers/accountReducer';
+import { useRouter } from 'next/router';
 function SignUp() {
   const { t } = useTranslation('common');
   const {
@@ -11,7 +14,26 @@ function SignUp() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const [error, setError] = useState('');
+  const onSubmit = (data: any) => {
+    if (data?.confirmPassword !== data?.password) {
+      setError('Password confirmation error');
+      setTimeout(() => {
+        setError('');
+      }, 3000);
+      return;
+    }
+    const user = {
+      id: generate(10),
+      username: data?.userName,
+      password: data?.password,
+      email: data?.email,
+    };
+    dispatch(addAccount(user));
+    router.push('/login');
+  };
   return (
     <div
       className="flex items-center justify-center signup-container"
@@ -93,6 +115,7 @@ function SignUp() {
               <u>{t('signin.signin')}</u>
             </Link>
           </p>
+          {error && <p className="text-red-500 text-center text-sm mt-2">{error}</p>}
           <button className="mt-10 w-full p-4 bg-sky-500/100">{t('signup.signup')}</button>
         </form>
       </div>
