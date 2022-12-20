@@ -8,6 +8,7 @@ export const getServerSideProps = async ({ locale }) => ({
     ...(await serverSideTranslations(locale ?? 'en-US', ['common'])),
   },
 });
+
 export default function SignIn() {
   const router = useRouter();
   console.log(router);
