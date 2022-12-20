@@ -6,9 +6,20 @@
         "resetPassword": "Reset password",
         "signIn": "SignIn",
         "donotHaveAccount": "Don't have account",
-        "createAccount": "Create an Account"
+        "createAccount": "Create an Account",
+        "emailIsRequired": "Email is required",
+        "password": "Password",
+        "passwordIsRequired": "Password is required"
     },
     "signup": {
         "signup": "Signup",
+        "signUpContinue": "sign up to continue",
+        "userName": "User Name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "userNameIsRequired": "Username name is required",
+        "pleaseConfirm": "Please confirm your email",
+        "alreadyHaveAccount": "Already have an Account? "
     }
 }

@@ -2,8 +2,8 @@ import React, { InputHTMLAttributes } from 'react';
 import { JsxElement } from 'typescript';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  label: string | number;
-  error?: string;
+  label: string | number | any;
+  error?: string | number | any;
   icon?: JsxElement;
 }
 function CustomInput({ label, error, icon, ...props }: Props) {

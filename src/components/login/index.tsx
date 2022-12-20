@@ -31,8 +31,8 @@ function SignIn() {
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               <CustomInput
-                label="Email"
-                error={errors?.email ? 'Email is required' : ''}
+                label={t('signup.email')}
+                error={errors?.email ? t('signin.emailIsRequired') : ''}
                 value={value}
                 onChange={onChange}
                 onBlur={onBlur}
@@ -47,11 +47,11 @@ function SignIn() {
             }}
             render={({ field: { onChange, onBlur, value } }) => (
               <CustomInput
-                label="Password"
+                label={t('signin.password')}
                 type="password"
                 value={value}
                 onChange={onChange}
-                error={errors?.password ? 'Password is required' : ''}
+                error={errors?.password ? t('signin.passwordIsRequired') : ''}
                 onBlur={onBlur}
               />
             )}
