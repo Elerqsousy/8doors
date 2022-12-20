@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import accountReducer from './reducers/accountReducer';
 
 const persistConfig = {
   key: 'root',
@@ -8,7 +9,9 @@ const persistConfig = {
   whitelist: ['account'],
 };
 
-const reducers = combineReducers({});
+const reducers = combineReducers({
+  account: accountReducer,
+});
 
 const PersistReducer = persistReducer(persistConfig, reducers);
 

@@ -11,7 +11,6 @@ export default function middleware(req: NextRequest) {
   // If localhost, assign the host value manually
   // If prod, get the custom domain/subdomain value by removing the root URL
   // (in the case of "test.vercel.app", "vercel.app" is the root URL)
-  console.log('hostname', hostname);
   const currentHost =
     process.env.NODE_ENV == 'production'
       ? hostname?.replace(`.8doors.vercel.app`, '') // PUT YOUR DOMAIN HERE
