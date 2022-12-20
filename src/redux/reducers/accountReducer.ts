@@ -14,9 +14,9 @@ const accountSlice = createSlice({
   initialState,
   reducers: {
     addAccount(state, action) {
-      let Account = state.accounts.find((account) => account.uid === action.payload.id);
+      let Account = state.accounts.find((account) => account?.id === action.payload.id);
       if (!Account) {
-        state.accounts.push(action.payload);
+        state.accounts.push(action?.payload);
       }
     },
     setCurrentUser(state, action) {
