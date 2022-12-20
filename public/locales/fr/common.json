@@ -1,10 +1,9 @@
 {
     "signin": {
-        "signin": "S'identifier",
+        "Login": "S'identifier",
         "singContinue": "Connectez-vous pour continuer",
         "forgetPassword": "Mot de passe oublié",
         "resetPassword": "Réinitialiser le mot de passe",
-        "signIn": "S'identifier",
         "donotHaveAccount": "Je n'ai pas de compte",
         "createAccount": "Create an Account"
     }

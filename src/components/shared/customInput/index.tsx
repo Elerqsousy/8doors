@@ -8,7 +8,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 }
 function CustomInput({ label, error, icon, ...props }: Props) {
   return (
-    <label className="block mt-10">
+    <label className="block mt-6">
       <span className="block text-sm font-medium text-slate-700">{label}</span>
       <input
         type={props.type}

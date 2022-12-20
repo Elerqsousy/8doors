@@ -40,8 +40,7 @@ function SignUp() {
       style={{ minHeight: '100vh' }}
     >
       <div className="card px-10 py-10 w-96">
-        <h1 className="text-3xl">{t('signup.signup')}</h1>
-        <p className="text-slate-500">{t('signup.signUpContinue')}</p>
+        <h1 className="text-4xl text-center">{t('signup.signup')}</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             control={control}
@@ -109,14 +108,16 @@ function SignUp() {
             )}
             name="confirmPassword"
           />
-          <p className="mt-3 text-sm text-slate-500 text-center">
+          {error && <p className="text-red-500 text-center text-sm mt-2">{error}</p>}
+
+      
+          <button className="mt-8 w-full p-4 bg-sky-500/100">{t('signup.signup')}</button>
+          <p className="my-2 text-sm text-slate-500 flex justify-between">
             <b>{t('signup.alreadyHaveAccount') + ' '}</b>
             <Link href="/login">
-              <u>{t('signin.signin')}</u>
+              <u>{t('signin.login')}</u>
             </Link>
           </p>
-          {error && <p className="text-red-500 text-center text-sm mt-2">{error}</p>}
-          <button className="mt-10 w-full p-4 bg-sky-500/100">{t('signup.signup')}</button>
         </form>
       </div>
     </div>

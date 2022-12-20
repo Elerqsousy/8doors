@@ -18,7 +18,7 @@
 }
 
 .signup-container {
-  background-image: url("https://png.pngtree.com/background/20210706/original/pngtree-doctors-medical-technology-banner-background-poster-picture-image_16119.jpg"); /* The image used */
+  background-image: url("../src/assets//mainBg.jpg"); /* The image used */
   background-color: #cccccc; /* Used if the image is unavailable */
   height: 90vh; /* You must set a specified height */
   background-position: center; /* Center the image */
