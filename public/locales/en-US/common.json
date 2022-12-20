@@ -21,5 +21,9 @@
         "userNameIsRequired": "Username name is required",
         "pleaseConfirm": "Please confirm your email",
         "alreadyHaveAccount": "Already have an Account? "
+    },
+    "forgetPassword": {
+        "pleaseEnterYourEmail": "Please enter your email",
+        "sendMeResetCode": "Send Me Reset Code"
     }
 }

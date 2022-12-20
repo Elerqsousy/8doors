@@ -1,9 +1,9 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
 /**
  * @param req
  */
-export default function middleware(req: any) {
+export default function middleware(req: NextRequest) {
   const { pathname, origin } = req.nextUrl;
   // Get hostname (e.g. vercel.com, test.vercel.app, etc.)
   const hostname = req.headers.get('host');
@@ -11,9 +11,9 @@ export default function middleware(req: any) {
   // If localhost, assign the host value manually
   // If prod, get the custom domain/subdomain value by removing the root URL
   // (in the case of "test.vercel.app", "vercel.app" is the root URL)
-  console.log("hostname", hostname)
+  console.log('hostname', hostname);
   const currentHost =
-      process.env.NODE_ENV == 'production'
+    process.env.NODE_ENV == 'production'
       ? hostname?.replace(`.8doors.vercel.app`, '') // PUT YOUR DOMAIN HERE
       : hostname?.replace(`.localhost:3000`, '');
 
@@ -23,13 +23,12 @@ export default function middleware(req: any) {
   if (pathname.startsWith(`/_sites`)) {
     return new Response(null, { status: 404 });
   }
-
   if (
     !pathname.includes('.') && // exclude all files in the public folder
     !pathname.startsWith('/api') // exclude all API routes
   ) {
     // rewrite to the current hostname under the pages/sites folder
     // the main logic component will happen in pages/sites/[site]/index.tsx
-     return NextResponse.rewrite(`${origin}/_sites/${currentHost}${pathname}`);
+    return NextResponse.rewrite(`${origin}/_sites/${currentHost}${pathname}`);
   }
 }
