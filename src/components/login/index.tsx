@@ -10,8 +10,7 @@ type Props = {
 };
 function SignIn() {
   const { t } = useTranslation('common');
-  const router = useRouter();
-  console.log(router);
+
   return (
     <div className="container flex items-center justify-center" style={{ minHeight: '100vh' }}>
       <div className="card px-10 py-10 w-96">
@@ -21,16 +20,16 @@ function SignIn() {
           <CustomInput label="Email" />
           <CustomInput label="Password" />
           <p className="mt-3 text-sm text-slate-500 text-center">
-            <b>Forget Password </b>
+            <b>{t('signin.forgetPassword')}</b>
             <Link href="/forget-password">
-              <u>Reset password</u>
+              <u>{' ' + t('signin.resetPassword')}</u>
             </Link>
           </p>
-          <button className="mt-10 w-full rounded p-4 bg-sky-500/100">SignIn</button>
+          <button className="mt-10 w-full rounded p-4 bg-sky-500/100">{t('signin.signIn')}</button>
           <p className="mt-3 text-sm text-slate-500 text-center">
-            <b>{"Don't have account "}</b>
+            <b>{t('signin.donotHaveAccount') + ' '}</b>
             <Link href="/signup">
-              <u>create an Account</u>
+              <u>{t('signin.createAccount')}</u>
             </Link>
           </p>
         </form>
