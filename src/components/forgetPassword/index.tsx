@@ -6,7 +6,10 @@ function Index() {
   const { t } = useTranslation('common');
 
   return (
-    <div className="container flex items-center justify-center" style={{ minHeight: '100vh' }}>
+    <div
+      className="flex items-center justify-center signup-container"
+      style={{ minHeight: '100vh' }}
+    >
       <div className="card px-10 py-10 w-96">
         <p className="text-slate-500">{t('forgetPassword.pleaseEnterYourEmail')}</p>
         <form>

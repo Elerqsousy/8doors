@@ -11,6 +11,5 @@ export const getServerSideProps = async ({ locale }) => ({
 
 export default function SignIn() {
   const router = useRouter();
-  console.log(router);
   return <SignInContainer />;
 }

@@ -19,7 +19,10 @@ function SignIn() {
   } = useForm();
   const onSubmit = (data: any) => console.log(data);
   return (
-    <div className="container flex items-center justify-center" style={{ minHeight: '100vh' }}>
+    <div
+      className="flex items-center justify-center signup-container"
+      style={{ minHeight: '100vh' }}
+    >
       <div className="card px-10 py-10 w-96">
         <h1 className="text-3xl">{t('signin.signin')}</h1>
         <p className="text-slate-500">{t('signin.singContinue')}</p>
