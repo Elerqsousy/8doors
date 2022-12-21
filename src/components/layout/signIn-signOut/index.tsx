@@ -1,4 +1,5 @@
 import React from 'react';
+import SignInSignUpFooter from './Footer';
 import Navbar from './Navbar';
 import styles from './styles.css';
 
@@ -7,13 +8,14 @@ interface Props {
   type: 'SIGN UP' | 'SIGN IN';
 }
 
-function SigninSignOutLayout({ children, type = 'SIGN UP' }: Props) {
+function SignInSignOutLayout({ children, type = 'SIGN UP' }: Props) {
   return (
     <div className={styles.container}>
-      <Navbar />
+      <Navbar signType={type} />
       {children}
+      <SignInSignUpFooter />
     </div>
   );
 }
 
-export default SigninSignOutLayout;
+export default SignInSignOutLayout;

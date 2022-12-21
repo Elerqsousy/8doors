@@ -4,10 +4,10 @@
 
 @layer components {
   .card {
-    background-color: theme("colors.white");
-    border-radius: theme("borderRadius.lg");
-    padding: theme("spacing.6");
-    box-shadow: theme("boxShadow.xl");
+    background-color: theme('colors.white');
+    border-radius: theme('borderRadius.lg');
+    padding: theme('spacing.6');
+    box-shadow: theme('boxShadow.xl');
   }
 }
 
@@ -15,14 +15,4 @@
   html {
     font-family: Cairo;
   }
-}
-
-.signup-container {
-  background-image: url("../src/assets//mainBg.jpg"); /* The image used */
-  background-color: #cccccc; /* Used if the image is unavailable */
-  height: 90vh; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;
-  width: 100% !important;
 }

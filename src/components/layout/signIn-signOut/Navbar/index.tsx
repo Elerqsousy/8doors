@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './styles.css';
-
-function Navbar({ signType = 'SIGN IN' }) {
+interface Props {
+  signType: 'SIGN UP' | 'SIGN IN';
+}
+function Navbar({ signType }: Props) {
   return (
     <div className="flex justify-between items-center">
       <div className={styles.logo}>8door</div>
