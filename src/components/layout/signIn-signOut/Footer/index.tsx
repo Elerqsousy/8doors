@@ -4,7 +4,7 @@ import React from 'react';
 function SignInSignUpFooter() {
   return (
     <div className="flex justify-between items-center">
-      <div className="flex justify-evenly">
+      <div className="flex w-64 justify-between">
         <Link href="/contact">
           <p className="text-white">CONTACT US</p>
         </Link>
