@@ -21,6 +21,9 @@ function SignIn() {
   const [error, setError] = useState('');
   const dispatch = useDispatch();
   const router = useRouter();
+  console.log(router.pathname);
+  console.log(router.asPath);
+  console.log(router.query);
 
   const { accounts } = useSelector((state) => state?.account);
   const onSubmit = (data: any) => {
