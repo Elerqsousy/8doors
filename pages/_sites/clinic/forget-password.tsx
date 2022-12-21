@@ -1,6 +1,8 @@
 import React from 'react';
-import ForgerPasswordContainer from 'components/forgetPassword';
+import ForgetPasswordContainer from 'components/forgetPassword';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import SignInSignOutLayout from 'components/layout/signIn-signOut';
+import { useRouter } from 'next/router';
 
 export const getServerSideProps = async ({ locale }) => ({
   props: {
@@ -9,7 +11,12 @@ export const getServerSideProps = async ({ locale }) => ({
 });
 
 function ForgetPassword() {
-  return <ForgerPasswordContainer />;
+  const router = useRouter();
+  return (
+    <SignInSignOutLayout type="SIGN IN" signOnClick={() => router.push('/login')}>
+      <ForgetPasswordContainer />
+    </SignInSignOutLayout>
+  );
 }
 
 export default ForgetPassword;

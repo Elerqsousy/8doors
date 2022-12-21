@@ -130,7 +130,9 @@ function SignUp() {
             I read and agree to the <u>terms of usage</u>{' '}
           </p>
         </div>
-        <button className="mt-8 w-full p-4 bg-sky-500/100 rounded-lg">{t('signup.signup')}</button>
+        <button className="mt-8 w-full p-4 text-white bg-sky-500/100 rounded-lg">
+          {t('signup.signup')}
+        </button>
         <p className="my-2 text-sm text-white text-center flex justify-center">
           <Link href="/login">
             <b>{t('signup.alreadyHaveAccount') + ' '}</b>
