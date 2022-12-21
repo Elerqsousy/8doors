@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { addAccount } from 'redux/reducers/accountReducer';
 import { useRouter } from 'next/router';
 import Logo from '../../assets/logo.svg';
+import styles from './style.module.css';
 
 function SignUp() {
   const { t } = useTranslation('common');
@@ -41,7 +42,8 @@ function SignUp() {
       <div className="flex  align-center justify-center">
         <Logo style={{ height: 65, width: 65 }} />
       </div>
-      <h1 className="text-4xl text-center">{t('signup.signup')}</h1>
+      <h1 className={styles.title}>{t('signup.signup')}</h1>
+      <h4 className="text-white text-center">Register new membership</h4>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
           control={control}
@@ -50,11 +52,14 @@ function SignUp() {
           }}
           render={({ field: { onChange, onBlur, value } }) => (
             <CustomInput
-              label={t('signup.userName')}
+              placeholder={t('signup.userName')}
               error={errors?.userName ? t('signup.userNameIsRequired') : ''}
               value={value}
               onChange={onChange}
               onBlur={onBlur}
+              className={`signin-signout-input w-full rounded-lg ${
+                errors?.userName ? 'border-red-500' : ''
+              }`}
             />
           )}
           name="userName"
@@ -66,11 +71,14 @@ function SignUp() {
           }}
           render={({ field: { onChange, onBlur, value } }) => (
             <CustomInput
-              label={t('signup.email')}
+              placeholder={t('signup.email')}
               error={errors?.email ? t('signin.emailIsRequired') : ''}
               value={value}
               onChange={onChange}
               onBlur={onBlur}
+              className={`signin-signout-input w-full rounded-lg ${
+                errors?.email ? 'border-red-500' : ''
+              }`}
             />
           )}
           name="email"
@@ -82,12 +90,15 @@ function SignUp() {
           }}
           render={({ field: { onChange, onBlur, value } }) => (
             <CustomInput
-              label={t('signin.password')}
+              placeholder={t('signin.password')}
               type="password"
               value={value}
               onChange={onChange}
               error={errors?.password ? t('signin.passwordIsRequired') : ''}
               onBlur={onBlur}
+              className={`signin-signout-input w-full rounded-lg ${
+                errors?.email ? 'border-red-500' : ''
+              }`}
             />
           )}
           name="password"
@@ -99,23 +110,30 @@ function SignUp() {
           }}
           render={({ field: { onChange, onBlur, value } }) => (
             <CustomInput
-              label={t('signup.confirmPassword')}
+              placeholder={t('signup.confirmPassword')}
               type="password"
               value={value}
               onChange={onChange}
               error={errors?.confirmPassword ? t('signup.pleaseConfirm') : ''}
               onBlur={onBlur}
+              className={`signin-signout-input w-full rounded-lg ${
+                errors?.email ? 'border-red-500' : ''
+              }`}
             />
           )}
           name="confirmPassword"
         />
         {error && <p className="text-red-500 text-center text-sm mt-2">{error}</p>}
-
-        <button className="mt-8 w-full p-4 bg-sky-500/100">{t('signup.signup')}</button>
-        <p className="my-2 text-sm text-slate-500 flex justify-between">
-          <b>{t('signup.alreadyHaveAccount') + ' '}</b>
+        <div className="flex items-center mt-5 justify-center">
+          <input type="checkbox" className="mr-3" name="" id="" />
+          <p className="text-white">
+            I read and agree to the <u>terms of usage</u>{' '}
+          </p>
+        </div>
+        <button className="mt-8 w-full p-4 bg-sky-500/100 rounded-lg">{t('signup.signup')}</button>
+        <p className="my-2 text-sm text-white text-center flex justify-center">
           <Link href="/login">
-            <u>{t('signin.login')}</u>
+            <b>{t('signup.alreadyHaveAccount') + ' '}</b>
           </Link>
         </p>
       </form>
