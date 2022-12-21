@@ -4,6 +4,7 @@ const theme = {
         body: 'system-ui, sans-serif',
         heading: '"Avenir Next", sans-serif',
         monospace: 'Menlo, monospace',
+        cairo: 'cairo'
     },
     colors: {
         text: '#000',

@@ -46,8 +46,7 @@ function SignIn() {
       style={{ minHeight: '100vh' }}
     >
       <div className="card px-10 py-10 w-96">
-        <h1 className="text-3xl">{t('signin.signin')}</h1>
-        <p className="text-slate-500">{t('signin.singContinue')}</p>
+        <h1 className="text-3xl text-center">{t('signin.login')}</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             control={control}
@@ -83,17 +82,16 @@ function SignIn() {
             )}
             name="password"
           />
-          <p className="mt-3 text-sm text-slate-500 text-center">
-            <b>{t('signin.forgetPassword')}</b>
+          <p className="mt-3 text-sm text-slate-500 text-center flex justify-end">
             <Link href="/forget-password">
-              <u>{' ' + t('signin.resetPassword')}</u>
+              <u>{' ' + t('signin.forgetPassword')}</u>
             </Link>
           </p>
           {error && <p className="text-red-500 text-center text-sm mt-2">{error}</p>}
           <button type="submit" className="mt-10 w-full rounded p-4 bg-sky-500/100">
-            {t('signin.signIn')}
+            {t('signin.login')}
           </button>
-          <p className="mt-3 text-sm text-slate-500 text-center">
+          <p className="mt-3 text-sm text-slate-500 flex justify-between">
             <b>{t('signin.donotHaveAccount') + ' '}</b>
             <Link href="/signup">
               <u>{t('signin.createAccount')}</u>
