@@ -40,7 +40,7 @@ function SignIn() {
     }
   };
   return (
-    <div className="self-center px-10 py-10 w-96">
+    <div className={`${styles.container} self-center px-10 py-10 w-96`}>
       <div className="flex  align-center justify-center">
         <Logo style={{ height: 65, width: 65 }} />
       </div>
