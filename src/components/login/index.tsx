@@ -23,10 +23,11 @@ function SignIn() {
   console.log(router.pathname);
   console.log(router.asPath);
   console.log(router.query);
-
+  //@ts-ignore
   const { accounts } = useSelector((state) => state?.account);
   const onSubmit = (data: any) => {
     const user = accounts.find(
+      //@ts-ignore
       (account) => account?.email === data?.email && account?.password === data?.password
     );
 

@@ -2,11 +2,12 @@ import React, { InputHTMLAttributes } from 'react';
 import { JsxElement } from 'typescript';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
-  label: string | number | any;
+  label?: string | number | any;
   error?: string | number | any;
   icon?: JsxElement;
+  placeholder?: any;
 }
-function CustomInput({ label, error, icon, ...props }: Props) {
+function CustomInput({ label = '', error, icon, ...props }: Props) {
   return (
     <label className="block mt-6">
       <span className="block text-sm font-medium text-slate-700">{label}</span>
