@@ -33,6 +33,16 @@ const nextConfig = {
     tsconfigPath,
   },
   trailingSlash: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'thememakker.com',
+        port: '',
+        pathname: '/templates/oreo/hospital/html/assets/images/**',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

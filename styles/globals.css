@@ -48,3 +48,7 @@
 .sidenav::-webkit-scrollbar {
   display: none;
 }
+.collapse {
+  display: none;
+  transition: 0.5s;
+}
