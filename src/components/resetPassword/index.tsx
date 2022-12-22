@@ -19,7 +19,7 @@ function index() {
           type="password"
         />
         <CustomInput
-          placeholder="Confirm Password"
+          placeholder="Confirm new password"
           label={''}
           className={`signin-signout-input w-full rounded-lg`}
           type="password"
