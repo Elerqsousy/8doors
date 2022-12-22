@@ -1,17 +1,22 @@
+import useOnClickOutside from 'hooks/useOnClickOutside';
 import useWindowSize from 'hooks/useWindowSize';
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './style.module.css';
 type props = {
   toggle: boolean;
+  setToggle: Function;
 };
-function SideNav({ toggle }: props) {
+function SideNav({ toggle, setToggle }: props) {
   const { width } = useWindowSize();
+  const ref = useRef(null);
+
+  useOnClickOutside(ref, () => setToggle(false));
   return (
     <div
-      className={styles.sidenav}
+      className="sidenav"
+      ref={ref}
       style={{
         width: width > 1184 ? '250px' : toggle ? '250px' : 0,
-        //marginLeft: width > 1184 ? '250px' : 0,
       }}
     >
       <h1>8Door</h1>

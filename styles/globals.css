@@ -31,3 +31,20 @@
 .signin-signout-input::placeholder {
   color: #fff;
 }
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 13;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.sidenav::-webkit-scrollbar {
+  display: none;
+}
