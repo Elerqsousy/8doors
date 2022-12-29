@@ -4,19 +4,19 @@ interface Props {
   title?: string;
   subTitle?: string;
   children: React.ReactNode;
-  showSider: boolean;
+  showSiderMenu: boolean;
 }
 
 export function Page({
   title,
   subTitle,
   children,
-  showSider,
+  showSiderMenu = false,
 }: Props): JSX.Element {
   const Header = (): JSX.Element => {
     return (
-      <div className='flex flex-col px-2.5 page-header'>
-        <div className='flex jutify-between p-[15px]'>
+      <div className='flex flex-col px-2.5 page-header h-[calc(screen - 190px)] relative'>
+        <div className='flex jutify-between p-[15px] z-10'>
           <h2 className='text-xl text-white font-medium'>
             {title}
             <small className='block text-white text-[13px] font-normal mt-2'>
@@ -24,11 +24,11 @@ export function Page({
             </small>
           </h2>
         </div>
-        <div>{children}</div>
+        <div className='z-10'>{children}</div>
       </div>
     );
   };
-  if (showSider)
+  if (showSiderMenu)
     return (
       <BasicLayout>
         <Header />
