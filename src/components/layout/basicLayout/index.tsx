@@ -3,7 +3,6 @@ import SideNav from 'components/sidenav';
 import useWindowSize from 'hooks/useWindowSize';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import styles from './style.module.css';
 
 type Props = {
   children?: React.ReactNode;
@@ -25,14 +24,7 @@ function BasicLayout({ children }: Props) {
         }}
       >
         <Navbar setToggle={setToggle} />
-        <div
-          className={styles.container}
-          style={{
-            backgroundColor: width > 1184 ? '#f8f9fa' : toggle ? 'rgba(0,0,0,0.4)' : '#f8f9fa',
-          }}
-        >
-          {children}
-        </div>
+        {children}
       </div>
     </React.Fragment>
   );
