@@ -148,3 +148,13 @@ ul {
   left: unset;
   right: 0;
 }
+
+.page-header::before {
+  background-color: #01d8da;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+}
