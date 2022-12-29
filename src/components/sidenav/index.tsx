@@ -13,9 +13,9 @@ import {
   faUser,
   faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
-import DropDown from 'components/shared/dropDown';
 import { generate } from 'randomized-string';
 import { useRouter } from 'next/router';
+import { DropDown } from 'components/shared';
 type props = {
   toggle: boolean;
   setToggle: Function;

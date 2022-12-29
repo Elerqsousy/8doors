@@ -15,7 +15,7 @@ interface Props {
   }[];
 }
 
-function DropDown({ icon = <React.Fragment></React.Fragment>, title, items = [] }: Props) {
+export function DropDown({ icon = <React.Fragment></React.Fragment>, title, items = [] }: Props) {
   const [toggle, setToggle] = useState(false);
   return (
     <div className="drop-down w-full" style={{}}>
@@ -46,5 +46,3 @@ function DropDown({ icon = <React.Fragment></React.Fragment>, title, items = [] 
     </div>
   );
 }
-
-export default DropDown;

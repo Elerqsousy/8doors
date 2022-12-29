@@ -1,4 +1,3 @@
-import CustomInput from 'components/shared/customInput';
 import React, { useState, useTransition } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +6,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import Logo from '../../assets/logo.svg';
 import styles from './style.module.css';
+import { CustomInput } from 'components/shared';
 
 function SignIn() {
   const { t } = useTranslation('common');

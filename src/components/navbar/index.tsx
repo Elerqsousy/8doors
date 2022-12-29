@@ -1,11 +1,11 @@
 import useWindowSize from 'hooks/useWindowSize';
 import React, { useEffect, useState } from 'react';
 import Bars from 'assets/bars.svg';
-import CustomInput from 'components/shared/customInput';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
+import { CustomInput } from 'components/shared';
 
 type Props = {
   setToggle: Function;
@@ -42,7 +42,7 @@ function Navbar({ setToggle }: Props) {
           /> */}
         </div>
 
-            
+
 
         <div className="flex items-center gap-5">
           <FontAwesomeIcon icon={faGlobe} />

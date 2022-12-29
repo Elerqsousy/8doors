@@ -1,4 +1,3 @@
-import CustomInput from 'components/shared/customInput';
 import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -9,6 +8,7 @@ import { addAccount } from 'redux/reducers/accountReducer';
 import { useRouter } from 'next/router';
 import Logo from '../../assets/logo.svg';
 import styles from './style.module.css';
+import { CustomInput } from 'components/shared';
 
 function SignUp() {
   const { t } = useTranslation('common');
