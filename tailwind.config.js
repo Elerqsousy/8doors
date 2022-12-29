@@ -7,9 +7,10 @@ module.exports = {
         cairo: ['Cairo , sans-serif'],
       },
       boxShadow: {
-        norm: '0 3px 8px 0 rgba(0,0,0,0.17)',
-        side: '1px 0px 20px rgba(0,0,0,0.08)',
-        nav: '0px 0px 20px 0px rgba(0,0,0,0.15)',
+        'norm': '0 3px 8px 0 rgba(0,0,0,0.17)',
+        'side': '1px 0px 20px rgba(0,0,0,0.08)',
+        'nav': '0px 0px 20px 0px rgba(0,0,0,0.15) !important',
+
       },
       colors: {
         primary: '#01d8da;',

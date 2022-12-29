@@ -14,9 +14,10 @@ function BasicLayout({ children }: Props) {
   const router = useRouter();
 
   return (
-    <React.Fragment>
+    <div className='w-screen'>
       <SideNav toggle={toggle} setToggle={setToggle} />
       <div
+        className='relative'
         style={{
           marginLeft: width > 1184 && router.locale !== 'ar' ? '250px' : 0,
           backgroundColor: '#fff',
@@ -26,7 +27,7 @@ function BasicLayout({ children }: Props) {
         <Navbar setToggle={setToggle} />
         {children}
       </div>
-    </React.Fragment>
+    </div>
   );
 }
 

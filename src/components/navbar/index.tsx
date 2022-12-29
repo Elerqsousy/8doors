@@ -25,8 +25,9 @@ function Navbar({ setToggle }: Props) {
   }, [router.locale]);
 
   return (
-    <nav className={`bg-sky-500/100 flex justify-between items-center px-4 h-20`}>
-      <div className="flex w-full justify-between  h-full items-center">
+    <nav className={`bg-primary flex justify-between items-center px-4 h-20 shadow-xl fixed top-0 right-0 z-10 ease-in duration-300`}
+    style={{ width: width > 1184 ? 'calc(100vw - 250px)' : '100vw' }}>
+      <div className="flex w-full justify-between w-full h-full items-center">
         <div className="flex gap-5">
           {width <= 1184 ? (
             <button onClick={() => setToggle((s: boolean) => !s)}>
@@ -36,10 +37,10 @@ function Navbar({ setToggle }: Props) {
             <React.Fragment></React.Fragment>
           )}
 
-          {/* <CustomInput
+          <CustomInput
             placeholder="search"
             className={`signin-signout-input w-full rounded-lg `}
-          /> */}
+          />
         </div>
 
 
