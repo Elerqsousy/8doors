@@ -1,4 +1,4 @@
-import { Page, Section } from 'components/shared';
+import { Button, Page, Section } from 'components/shared';
 import React from 'react';
 
 export default function ClinicPage() {
@@ -24,9 +24,17 @@ export default function ClinicPage() {
       </Section>
       <Section className='w-1/3' title='Book Appointment'>
         <div className='h-[100px] w-full bg-gray-lighter'>content 4</div>
+        <div className='flex flex-wrap gap-x-2.5 mt-5'>
+          <Button>submit</Button>
+          <Button design='secondary'>submit</Button>
+        </div>
       </Section>
       <Section className='w-1/3' title='Book Appointment'>
         <div className='h-[100px] w-full bg-gray-lighter'>content 5</div>
+        <div className='flex flex-wrap gap-x-2.5 mt-5'>
+          <Button fit>submit</Button>
+          <Button fit design='secondary'>submit</Button>
+        </div>
       </Section>
       <Section className='w-1/3' title='Book Appointment'>
         <div className='h-[100px] w-full bg-gray-lighter'>content 6</div>
