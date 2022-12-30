@@ -17,9 +17,11 @@ export function Section({
   closable = false,
 }: Props) {
   return (
-    <section className={classNames('mx-[15px] mb-[30px] rounded-[.1875rem] bg-white relative w-full grow', containerClasses)}>
+    <div className={classNames('grow flex px-[15px] mb-[30px] w-full relative', containerClasses)}>
+      <section className='rounded-[.1875rem] bg-white w-full grow'>
       {title?.length && <SectionHeader title={title} subtitle={subtitle} />}
       <div className='p-5'>{children}</div>
     </section>
+    </div>
   );
 }
