@@ -11,13 +11,13 @@ export function Page({
   title,
   subTitle,
   children,
-  showSiderMenu = false,
+  showSiderMenu = true,
 }: Props): JSX.Element {
 
-  const Header = (): JSX.Element => {
+  const Content = (): JSX.Element => {
     return (
       <div
-        className='flex flex-col px-2.5 page-header h-[calc(100vh-80px)] w-full mt-[80px]'
+        className='flex flex-col px-2.5 page-header h-[calc(100vh-80px)] w-full mt-[80px] bg-gray-lighter'
       >
         <div className='flex jutify-between p-[15px] z-10'>
           <h2 className='text-xl text-white font-medium'>
@@ -34,8 +34,8 @@ export function Page({
   if (showSiderMenu)
     return (
       <BasicLayout>
-        <Header />
+        <Content />
       </BasicLayout>
     );
-  return <Header />;
+  return <Content />;
 }

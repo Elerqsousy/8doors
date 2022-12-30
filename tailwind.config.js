@@ -14,9 +14,9 @@ module.exports = {
       },
       colors: {
         primary: '#01d8da;',
-        gray: {
+        'gray': {
           lighter: '#f4f6f9',
-          light: '#9A9A9A',
+          light: '#9e9e9e',
           mid: '#888',
           dark: '#757575',
           darker: '#455a64',
@@ -27,6 +27,13 @@ module.exports = {
           dark: '#212529',
         },
       },
+    },
+    screens: {
+      'sm': {'min': '640px', 'max': '767px'},
+      'md': {'min': '768px', 'max': '1023px'},
+      'lg': {'min': '1024px', 'max': '1279px'},
+      'xl': {'min': '1280px', 'max': '1535px'},
+      '2xl': {'min': '1536px'},
     },
   },
   plugins: [],

@@ -1,11 +1,15 @@
 import BasicLayout from 'components/layout/basicLayout';
-import { Page } from 'components/shared';
+import { Page, Section } from 'components/shared';
 import React from 'react';
 
 export default function ClinicPage() {
   return (
     <Page title='Home Page' subTitle='sub-text' showSiderMenu>
-      <h4>content</h4>
+      <Section title='Book Appointment' subtitle='Description text here...'>
+        <div className='h-[100px] w-full'>
+          content
+        </div>
+      </Section>
     </Page>
   );
 }
