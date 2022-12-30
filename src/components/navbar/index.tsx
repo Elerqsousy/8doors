@@ -25,7 +25,7 @@ function Navbar({ setToggle }: Props) {
   }, [router.locale]);
 
   return (
-    <nav className={`bg-primary flex justify-between items-center px-4 h-20 shadow-xl fixed top-0 right-0 z-10 ease-in duration-300`}
+    <nav className={`bg-primary flex justify-between items-center px-4 h-20 shadow-md fixed top-0 right-0 z-10 ease-in duration-300`}
     style={{ width: width > 1184 ? 'calc(100vw - 250px)' : '100vw' }}>
       <div className="flex w-full justify-between w-full h-full items-center">
         <div className="flex gap-5">
