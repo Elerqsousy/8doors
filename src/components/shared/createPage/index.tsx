@@ -27,7 +27,7 @@ export function Page({
             </small>
           </h2>
         </div>
-        <div className='z-10'>{children}</div>
+        <div className='z-10 flex flex-wrap'>{children}</div>
       </div>
     );
   };

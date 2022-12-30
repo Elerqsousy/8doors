@@ -10,6 +10,29 @@ export default function ClinicPage() {
           content
         </div>
       </Section>
+      <Section containerClasses='w-1/3' title='Book Appointment'>
+        <div className='h-[100px] w-full'>
+          content
+        </div>
+      </Section>
+      <Section containerClasses='w-1/3'>
+        <div className='h-[100px] w-full'>
+          content
+        </div>
+      </Section>
+      <Section containerClasses='w-1/4' title='Book Appointment'>
+        <div className='h-[100px] w-full'>
+          content
+        </div>
+      </Section><Section containerClasses='w-1/4' title='Book Appointment'>
+        <div className='h-[100px] w-full'>
+          content
+        </div>
+      </Section><Section containerClasses='w-1/4' title='Book Appointment'>
+        <div className='h-[100px] w-full'>
+          content
+        </div>
+      </Section>
     </Page>
   );
 }
