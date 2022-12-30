@@ -26,94 +26,94 @@ function SideNav({ toggle, setToggle }: props) {
   const router = useRouter();
   useOnClickOutside(ref, () => setToggle(false));
   return (
-      <div
-        className='sidenav z-50'
-        ref={ref}
-        style={{
-          width: width > 1184 || toggle ? '250px' : 0,
-        }}
-      >
-        <div className={`${styles.container}`}>
-          <div className={`${styles.doctorProfile} mt-3`}>
-            <div className={`${styles.imgContainer} rounded-full`}>
-              <Doctor style={{ width: 80, height: 80 }} />
-            </div>
-            <h2 className='text-center'>Dr. Dagi</h2>
-            <h5 className='text-center'>Neurologist</h5>
+    <div
+      className='sidenav z-50 shadow-2xl'
+      ref={ref}
+      style={{
+        width: width > 1184 || toggle ? '250px' : 0,
+      }}
+    >
+      <div className={`${styles.container}`}>
+        <div className={`${styles.doctorProfile} mt-3`}>
+          <div className={`${styles.imgContainer} rounded-full`}>
+            <Doctor style={{ width: 80, height: 80 }} />
           </div>
-          <h4 className='mt-10'>Main</h4>
-          <div className={styles.main}>
-            <div className='flex gap-5 items-center hover:text-gray-900 hover:bg-gray-100'>
-              <FontAwesomeIcon icon={faHome} />
-              Dashboard
-            </div>
-            <div className='flex gap-5 items-center hover:text-gray-900 hover:bg-gray-100'>
-              <FontAwesomeIcon icon={faCalendar} />
-              Appointment
-            </div>
-            <DropDown
-              title='Doctors'
-              icon={<FontAwesomeIcon icon={faUserPlus} />}
-              items={[
-                {
-                  id: generate(8),
-                  onClick: () => router.push('/allDoctors'),
-                  name: 'All Doctors',
-                  icon: <FontAwesomeIcon icon={faArrowRightLong} />,
-                },
-                {
-                  id: generate(8),
-                  onClick: () => router.push('/addDoctor'),
-                  name: 'Add Doctor',
-                  icon: <FontAwesomeIcon icon={faArrowRightLong} />,
-                },
-                {
-                  id: generate(8),
-                  onClick: () => router.push('/doctorProfile'),
-                  name: 'Doctor profile',
-                  icon: <FontAwesomeIcon icon={faArrowRightLong} />,
-                },
-                {
-                  id: generate(8),
-                  onClick: () => router.push('/addDoctor'),
-                  name: 'Add Doctor',
-                  icon: <FontAwesomeIcon icon={faArrowRightLong} />,
-                },
-              ]}
-            />
-            <DropDown
-              title='Patients'
-              icon={<FontAwesomeIcon icon={faUser} />}
-              items={[
-                {
-                  id: generate(8),
-                  onClick: () => router.push('/patients'),
-                  name: 'All Patients',
-                  icon: <FontAwesomeIcon icon={faArrowRightLong} />,
-                },
-                {
-                  id: generate(8),
-                  onClick: () => router.push('/addPatient'),
-                  name: 'Add Patient',
-                  icon: <FontAwesomeIcon icon={faArrowRightLong} />,
-                },
-                {
-                  id: generate(8),
-                  onClick: () => router.push('/patientProfile'),
-                  name: 'Patient profile',
-                  icon: <FontAwesomeIcon icon={faArrowRightLong} />,
-                },
-                {
-                  id: generate(8),
-                  onClick: () => router.push('/invoice'),
-                  name: 'Invoice',
-                  icon: <FontAwesomeIcon icon={faArrowRightLong} />,
-                },
-              ]}
-            />
+          <h2 className='text-center'>Dr. Dagi</h2>
+          <h5 className='text-center'>Neurologist</h5>
+        </div>
+        <h4 className='mt-10'>Main</h4>
+        <div className={styles.main}>
+          <div className='flex gap-5 items-center hover:text-gray-900 hover:bg-gray-100'>
+            <FontAwesomeIcon icon={faHome} />
+            Dashboard
           </div>
+          <div className='flex gap-5 items-center hover:text-gray-900 hover:bg-gray-100'>
+            <FontAwesomeIcon icon={faCalendar} />
+            Appointment
+          </div>
+          <DropDown
+            title='Doctors'
+            icon={<FontAwesomeIcon icon={faUserPlus} />}
+            items={[
+              {
+                id: generate(8),
+                onClick: () => router.push('/allDoctors'),
+                name: 'All Doctors',
+                icon: <FontAwesomeIcon icon={faArrowRightLong} />,
+              },
+              {
+                id: generate(8),
+                onClick: () => router.push('/addDoctor'),
+                name: 'Add Doctor',
+                icon: <FontAwesomeIcon icon={faArrowRightLong} />,
+              },
+              {
+                id: generate(8),
+                onClick: () => router.push('/doctorProfile'),
+                name: 'Doctor profile',
+                icon: <FontAwesomeIcon icon={faArrowRightLong} />,
+              },
+              {
+                id: generate(8),
+                onClick: () => router.push('/addDoctor'),
+                name: 'Add Doctor',
+                icon: <FontAwesomeIcon icon={faArrowRightLong} />,
+              },
+            ]}
+          />
+          <DropDown
+            title='Patients'
+            icon={<FontAwesomeIcon icon={faUser} />}
+            items={[
+              {
+                id: generate(8),
+                onClick: () => router.push('/patients'),
+                name: 'All Patients',
+                icon: <FontAwesomeIcon icon={faArrowRightLong} />,
+              },
+              {
+                id: generate(8),
+                onClick: () => router.push('/addPatient'),
+                name: 'Add Patient',
+                icon: <FontAwesomeIcon icon={faArrowRightLong} />,
+              },
+              {
+                id: generate(8),
+                onClick: () => router.push('/patientProfile'),
+                name: 'Patient profile',
+                icon: <FontAwesomeIcon icon={faArrowRightLong} />,
+              },
+              {
+                id: generate(8),
+                onClick: () => router.push('/invoice'),
+                name: 'Invoice',
+                icon: <FontAwesomeIcon icon={faArrowRightLong} />,
+              },
+            ]}
+          />
         </div>
       </div>
+    </div>
   );
 }
 
