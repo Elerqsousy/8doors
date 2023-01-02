@@ -30,7 +30,7 @@ export default function MenuItem({
         'flex flex-col w-full cursor-pointer text-4 capitalize  ',
         {
           'text-gray-darker': path !== router.asPath,
-          'absolute bottom-0 left-0 bg-gradient-to-r from-slate-300 to-slate-100':
+          'absolute bottom-0 left-0 bg-gradient-to-r from-slate-100 to-gray-lighter':
             item.static,
         },
         path === router.asPath && activeStyle
