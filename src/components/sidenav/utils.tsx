@@ -1,35 +1,45 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarCheck, faHome, faUser, faUserPlus, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowRightLong,
+  faCalendarCheck,
+  faGear,
+  faHome,
+  faUser,
+  faUserPlus,
+} from '@fortawesome/free-solid-svg-icons';
 
 export type menuitemType = {
-  label: string;
-  icon: IconDefinition;
-  path?: string;
+  label?: string;
+  icon?: React.ReactElement;
+  path: string;
   display?: boolean;
-  submenu?: menuItemsType[] | {}[] | null;
-}
+  submenu?: menuItemsType;
+  static?: boolean;
+};
 
 export type menuItemsType = menuitemType[];
 
 export const mainMenuItems: menuItemsType = [
   {
     label: 'Dashboard',
-    icon: faHome,
-    submenu: null,
+    icon: <FontAwesomeIcon icon={faHome} className='w-[14px] h-[14px]' />,
+    submenu: [],
     display: true,
     path: '/',
   },
   {
     label: 'Appointments',
-    icon: faCalendarCheck,
-    submenu: null,
+    icon: (
+      <FontAwesomeIcon icon={faCalendarCheck} className='w-[14px] h-[14px]' />
+    ),
+    submenu: [],
     display: true,
     path: '/appointments',
   },
   {
     label: 'Doctors',
-    icon: faUserPlus,
+    icon: <FontAwesomeIcon icon={faUserPlus} className='w-[14px] h-[14px]' />,
     display: true,
     path: '',
     submenu: [
@@ -37,17 +47,106 @@ export const mainMenuItems: menuItemsType = [
         label: 'All Doctors',
         display: true,
         path: '/doctors',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
       },
       {
         label: 'Add Doctor',
         display: true,
         path: '/add-doctor',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
       },
       {
         label: 'Doctor Profile',
         display: true,
         path: '/doctor-profile',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
       },
     ],
+  },
+  {
+    label: 'Patients',
+    icon: <FontAwesomeIcon icon={faUser} className='w-[14px] h-[14px]' />,
+    display: true,
+    path: '',
+    submenu: [
+      {
+        label: 'All Doctors',
+        display: true,
+        path: '/doctors',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
+      },
+      {
+        label: 'Add Doctor',
+        display: true,
+        path: '/add-doctor',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
+      },
+      {
+        label: 'Doctor Profile',
+        display: true,
+        path: '/doctor-profile',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
+      },
+    ],
+  },
+  {
+    label: 'Patients',
+    icon: <FontAwesomeIcon icon={faUser} className='w-[14px] h-[14px]' />,
+    display: true,
+    path: '',
+    submenu: [
+      {
+        label: 'All Doctors',
+        display: true,
+        path: '/doctors',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
+      },
+      {
+        label: 'Add Doctor',
+        display: true,
+        path: '/add-doctor',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
+      },
+      {
+        label: 'Doctor Profile',
+        display: true,
+        path: '/doctor-profile',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
+      },
+    ],
+  },
+  {
+    label: 'Patients',
+    icon: <FontAwesomeIcon icon={faUser} className='w-[14px] h-[14px]' />,
+    display: true,
+    path: '',
+    submenu: [
+      {
+        label: 'All Doctors',
+        display: true,
+        path: '/doctors',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
+      },
+      {
+        label: 'Add Doctor',
+        display: true,
+        path: '/add-doctor',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
+      },
+      {
+        label: 'Doctor Profile',
+        display: true,
+        path: '/doctor-profile',
+        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
+      },
+    ],
+  },
+  {
+    label: 'Configuration',
+    icon: <FontAwesomeIcon icon={faGear} className='w-[14px] h-[14px]' />,
+    submenu: [],
+    display: true,
+    path: '/configuration',
+    static: true,
   },
 ];

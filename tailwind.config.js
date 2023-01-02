@@ -24,6 +24,15 @@ module.exports = {
           dark: '#212529',
         },
       },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'bg-white' },
+          '50%': { transform: 'bg-gradient-to-r from-slate-500 to-slate-100' },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out',
+      }
     },
     screens: {
       'sm': {'min': '640px', 'max': '767px'},

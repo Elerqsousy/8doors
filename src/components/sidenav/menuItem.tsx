@@ -1,7 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
-import { ReactIcon } from 'components/shared';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { menuitemType } from './utils';
@@ -10,12 +7,18 @@ type Props = {
   item: menuitemType;
   children?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  className?: string;
+  activeStyle?: string;
+  onClick?: () => void;
 };
 
 export default function MenuItem({
   item,
+  className = '',
   rightIcon = <React.Fragment />,
   children = <React.Fragment />,
+  activeStyle = 'font-bold text-primary',
+  onClick = () => {},
 }: Props) {
   const { label, icon, path, display } = item;
   const router = useRouter();
@@ -24,20 +27,26 @@ export default function MenuItem({
   return (
     <li
       className={classNames(
-        'flex flex-col w-full cursor-pointer text-4 capitalize py-[14px] px-[10px] relative hover:text-primary',
+        'flex flex-col w-full cursor-pointer text-4 capitalize py-[14px] px-[10px]',
         {
-          'font-bold text-primary': path === router.asPath,
           'text-gray-darker': path !== router.asPath,
-        }
+          'absolute bottom-0 left-0 py-5 px-[30px] bg-gradient-to-r from-slate-300 to-slate-100': item.static
+        },
+        className,
+        path === router.asPath && activeStyle
       )}
+      onClick={onClick}
     >
-      <Link href='/' className='flex justify-between items-center'>
+      <a
+        onClick={() => path.length && router.push(path)}
+        className='flex justify-between items-center hover:text-primary'
+      >
         <div className='flex gap-4 items-center '>
-          {!!icon && <FontAwesomeIcon icon={icon} className='w-[14px] h-[14px]' />}
+          {!!icon && icon}
           {label}
         </div>
         {rightIcon}
-      </Link>
+      </a>
       {children}
     </li>
   );
