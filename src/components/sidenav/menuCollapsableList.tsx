@@ -50,7 +50,6 @@ function MenuCollapsibleList({ item }: Props): JSX.Element {
     >
       <ul
         className={classNames(
-          { 'pt-[10px]': open },
           'hover:text-primary overflow-hidden transition-all ease-in-out duration-300'
         )}
         style={{ height: !open ? 0 : 32 * submenuLenght + 40 }}
@@ -62,7 +61,7 @@ function MenuCollapsibleList({ item }: Props): JSX.Element {
           <MenuItem
             item={subI}
             key={generate(8)}
-            className='text-[15px] !py-[7px] px-2 '
+            className='text-[15px] !py-[7px] px-[17px] '
             activeStyle='font-semibold'
           />
         ))}

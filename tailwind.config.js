@@ -26,8 +26,8 @@ module.exports = {
       },
       keyframes: {
         wiggle: {
-          '0%, 100%': { transform: 'bg-white' },
-          '50%': { transform: 'bg-gradient-to-r from-slate-500 to-slate-100' },
+          '0%, 100%': 'bg-white',
+          '50%': 'bg-gradient-to-r from-slate-500 to-slate-100',
         }
       },
       animation: {

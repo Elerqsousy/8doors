@@ -27,19 +27,23 @@ export default function MenuItem({
   return (
     <li
       className={classNames(
-        'flex flex-col w-full cursor-pointer text-4 capitalize py-[14px] px-[10px]',
+        'flex flex-col w-full cursor-pointer text-4 capitalize  ',
         {
           'text-gray-darker': path !== router.asPath,
-          'absolute bottom-0 left-0 py-5 px-[30px] bg-gradient-to-r from-slate-300 to-slate-100': item.static
+          'absolute bottom-0 left-0 bg-gradient-to-r from-slate-300 to-slate-100':
+            item.static,
         },
-        className,
         path === router.asPath && activeStyle
       )}
       onClick={onClick}
     >
       <a
         onClick={() => path.length && router.push(path)}
-        className='flex justify-between items-center hover:text-primary'
+        className={classNames(
+          'flex justify-between items-center py-[14px] px-[10px] hover:text-primary active:!bg-slate-100 ease-in-out duration-[2]',
+          className,
+          { 'py-5 px-[30px]': item.static }
+        )}
       >
         <div className='flex gap-4 items-center '>
           {!!icon && icon}
