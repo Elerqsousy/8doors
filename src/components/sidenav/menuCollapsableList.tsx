@@ -43,7 +43,7 @@ function MenuCollapsibleList({ item }: Props): JSX.Element {
           })}
         />
       }
-      className={classNames({ '!text-primary': active })}
+      className={classNames({ '!text-primary font-bold': active })}
       onClick={() => {
         toggle(!open);
       }}
@@ -62,7 +62,7 @@ function MenuCollapsibleList({ item }: Props): JSX.Element {
             item={subI}
             key={generate(8)}
             className='text-[15px] !py-[7px] px-[17px] '
-            activeStyle='font-semibold'
+            activeStyle='font-bold'
           />
         ))}
       </ul>
