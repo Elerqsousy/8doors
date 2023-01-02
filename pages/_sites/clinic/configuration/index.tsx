@@ -1,4 +1,4 @@
-import { Button, CollapsibleSection, Page, Section } from 'components/shared';
+import { Button, CollapsibleSection, Page } from 'components/shared';
 import React from "react";
 
 export default function Configuration() {

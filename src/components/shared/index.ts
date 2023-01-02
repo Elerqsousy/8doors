@@ -5,3 +5,6 @@ export * from './section';
 export * from './sectionHeader';
 export * from './button';
 export * from './icon';
+export * from './userTemplate';
+export * from './createModalPage';
+export * from './modalPageFooter';

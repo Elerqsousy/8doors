@@ -27,7 +27,7 @@ export function CollapsibleSection({
       title={title}
       subtitle={subtitle}
       onClick={() => toggle(!open)}
-      childernClassName={open ? childernClassName : '!p-0'}
+      childernClassName={open ? childernClassName : '!py-0'}
     >
       <FontAwesomeIcon
         icon={faAngleRight}

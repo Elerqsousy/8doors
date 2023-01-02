@@ -1,5 +1,3 @@
-/* @import url(https://fonts.googleapis.com/icon?family=Material+Icons); */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -158,4 +156,8 @@ ul {
   left: -20px;
   top: 3px;
   content: '';
+}
+
+.stethoscopeBg {
+  background-image: url('../src/assets/mainBg.jpg');
 }
