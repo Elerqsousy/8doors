@@ -34,7 +34,7 @@ export function ReactIcon({
         onMouseEnter={changeColorHover}
         onMouseLeave={resetColor}
         className={classNames(
-          'cursor-pointer ease-in-out duration-300',
+          'cursor-pointer ease-in-out duration-300 group',
           className
         )}
       >
