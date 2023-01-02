@@ -6,13 +6,13 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import { CustomInput } from 'components/shared';
+import classNames from 'classnames';
 
 type Props = {
   setToggle: Function;
 };
 
 function Navbar({ setToggle }: Props) {
-  const { i18n } = useTranslation();
   const { width } = useWindowSize();
   const router = useRouter();
   const { pathname, asPath, query } = router;
@@ -25,26 +25,18 @@ function Navbar({ setToggle }: Props) {
   }, [router.locale]);
 
   return (
-    <nav className={`bg-primary flex justify-between items-center px-4 h-20 shadow-md fixed top-0 right-0 z-10 `}
-    style={{ width: width > 1184 ? 'calc(100vw - 250px)' : '100vw' }}>
+    <nav className={classNames('bg-primary flex justify-between items-center px-4 h-20 shadow-md fixed top-0 z-10',
+    {'right-0': router.locale !== 'ar', 'left-0': router.locale === 'ar' })}
+    style={{ width: width > 1184 ? 'calc(100vw - 250px)' : '100vw' ,
+    }}>
       <div className="flex w-full justify-between w-full h-full items-center">
         <div className="flex gap-5">
-          {width <= 1184 ? (
+          {width <= 1184 && (
             <button onClick={() => setToggle((s: boolean) => !s)}>
               <Bars style={{ height: 23, width: 43, color: '#fff' }} />
             </button>
-          ) : (
-            <React.Fragment></React.Fragment>
           )}
-
-          <CustomInput
-            placeholder="search"
-            className={`signin-signout-input w-full rounded-lg `}
-          />
         </div>
-
-
-
         <div className="flex items-center gap-5">
           <FontAwesomeIcon icon={faGlobe} />
           <select
