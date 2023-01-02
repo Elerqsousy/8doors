@@ -1,3 +1,5 @@
+/* @import url(https://fonts.googleapis.com/icon?family=Material+Icons); */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,21 +46,10 @@
   scrollbar-width: none;
 }
 
-
 .sidenav::-webkit-scrollbar {
   display: none;
 }
-.collapse {
-  display: none;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
 
-element.style {
-}
-.relative {
-  position: relative;
-}
 ol,
 ul,
 menu {
@@ -162,9 +153,9 @@ ul {
 .section-heaeder::before {
   background: #00cfd1;
   position: absolute;
-width: 2px;
-height: 18px;
-left: -20px;
-top: 3px;
-content: '';
+  width: 2px;
+  height: 18px;
+  left: -20px;
+  top: 3px;
+  content: '';
 }

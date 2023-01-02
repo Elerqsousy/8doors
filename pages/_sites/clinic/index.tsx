@@ -21,13 +21,13 @@ export default function ClinicPage() {
           <Button design='secondary'>cancel</Button>
         </div>
       </Section>
-      <Section className='w-1/3' title='Book Appointment'>
+      <Section className='w-1/3' >
         <div className='h-[100px] w-full bg-gray-lighter'>content 4</div>
       </Section>
-      <Section className='w-1/3' title='Book Appointment'>
+      <Section className='w-1/3' >
         <div className='h-[100px] w-full bg-gray-lighter'>content 5</div>
       </Section>
-      <Section className='w-1/3' title='Book Appointment'>
+      <Section className='w-1/3' >
         <div className='h-[100px] w-full bg-gray-lighter'>content 6</div>
       </Section>
       <Section className='w-1/3' title='Book Appointment'>
