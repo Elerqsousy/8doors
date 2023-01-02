@@ -6,7 +6,9 @@ type Props = {
   title?: string | null | undefined;
   subtitle?: string | null | undefined;
   className?: string;
+  childernClassName?: string;
   closable?: boolean;
+  onClick?: () => void;
 };
 
 export function Section({
@@ -14,14 +16,25 @@ export function Section({
   title,
   subtitle,
   className = '',
+  childernClassName = '',
   closable = false,
+  onClick = () => {},
+  ...rest
 }: Props) {
   return (
-    <div className={classNames('grow flex px-[15px] mb-[30px] w-full relative', className)}>
+    <div
+      {...rest}
+      className={classNames(
+        'grow flex px-[15px] mb-[30px] w-full relative',
+        className
+      )}
+    >
       <section className='rounded-[.1875rem] bg-white w-full grow'>
-      {title?.length && <SectionHeader title={title} subtitle={subtitle} />}
-      <div className='p-5'>{children}</div>
-    </section>
+        {title?.length && (
+          <SectionHeader onClick={onClick} title={title} subtitle={subtitle} />
+        )}
+        <div className={classNames('p-5 ease-in-out duration-300', childernClassName)}>{children}</div>
+      </section>
     </div>
   );
 }
