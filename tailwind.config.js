@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       transitionProperty: {
-        'height': 'height'
+        'height': 'height',
+        'display': 'display'
       },
       fontFamily: {
         cairo: ['Cairo , sans-serif'],

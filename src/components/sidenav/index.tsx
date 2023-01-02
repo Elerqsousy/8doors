@@ -5,6 +5,7 @@ import styles from './style.module.css';
 import Doctor from '../../assets/doctor.svg';
 import { mainMenuItems } from './utils';
 import { RenderMenuItems } from './menuRenderer';
+import classNames from 'classnames';
 
 type SideNavProps = {
   toggle: boolean;
@@ -17,13 +18,18 @@ function SideNav({ toggle, setToggle }: SideNavProps) {
   useOnClickOutside(ref, () => setToggle(false));
   return (
     <div
-      className='sidenav z-50 shadow-2xl relative'
+      className={classNames(
+        'sidenav z-50 shadow-2xl relative ease-in-out duration-300'
+      )}
       ref={ref}
       style={{
         width: width > 1184 || toggle ? '250px' : 0,
       }}
     >
-      <div className='h-full overflow-scroll  width-auto p-[15px]'>
+      <div
+        className='h-full overflow-scroll  width-auto p-[15px] transition-all ease-in-out duration-100 overflow-hidden'
+        style={{ display: width > 1184 || toggle ? 'block' : 'none' }}
+      >
         <div className={`${styles.doctorProfile} mt-3`}>
           <div className={`${styles.imgContainer} rounded-full`}>
             <Doctor style={{ width: 80, height: 80 }} />
