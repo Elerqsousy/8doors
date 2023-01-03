@@ -19,7 +19,6 @@ export function CollapsibleSection({
   subtitle,
   className = '',
   headerClassName = '',
-
   childernClassName = '',
 }: Props) {
   const [open, toggle] = React.useState(false);

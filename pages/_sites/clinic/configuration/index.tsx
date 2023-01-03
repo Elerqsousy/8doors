@@ -1,4 +1,4 @@
-import { Button, CollapsibleSection, Page, Section, Table } from 'components/shared';
+import { CollapsibleSection, Page, Section, Table } from 'components/shared';
 import React from 'react';
 
 export default function Configuration() {
@@ -15,14 +15,9 @@ export default function Configuration() {
         <CollapsibleSection
           title='Staff'
           className='!bg-gray-lighter !m-0 !p-0'
+          childernClassName='!px-0'
         >
-          <div className='h-[100px] w-full bg-gray-lighter'>content 1</div>
-          <div className='flex flex-wrap gap-x-2.5 mt-5'>
-            <Button fit>submit</Button>
-            <Button fit disabled design='secondary'>
-              cancel
-            </Button>
-          </div>
+          <Table />
         </CollapsibleSection>
       </Section>
     </Page>
