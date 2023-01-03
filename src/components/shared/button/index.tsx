@@ -6,10 +6,11 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   fit?: boolean;
   icon?: React.ReactElement;
   design?: 'primary' | 'secondary' | 'success' | 'danger' | 'warning';
+  onClick?: () => void;
 }
 
 export function Button({
-  onClick,
+  onClick = () => {},
   icon,
   children,
   design = 'primary',
@@ -28,8 +29,11 @@ export function Button({
     <button
       className={classNames(
         'grow flex justify-center items-center mx-[1px] my-[5px] px-[23px] py-[10px] border rounded-[30px] text-[.8571em] leading-[1.35em] capitalize ',
-        {'max-w-fit': fit},className, styles[design]
+        { 'max-w-fit': fit },
+        className,
+        styles[design]
       )}
+      onClick={onClick}
       {...rest}
     >
       {icon && <span className='mr-[10px]'>{icon}</span>}

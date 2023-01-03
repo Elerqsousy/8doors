@@ -29,11 +29,18 @@ export function Section({
         className
       )}
     >
-      <section className='rounded-[.1875rem] bg-white w-full grow'>
+      <section className='rounded-[.1875rem] overflow-hidden bg-white w-full grow'>
         {title?.length && (
           <SectionHeader onClick={onClick} title={title} subtitle={subtitle} />
         )}
-        <div className={classNames('p-5 ease-in-out duration-300', childernClassName)}>{children}</div>
+        <div
+          className={classNames(
+            'p-5 ease-in-out duration-300',
+            childernClassName
+          )}
+        >
+          {children}
+        </div>
       </section>
     </div>
   );
