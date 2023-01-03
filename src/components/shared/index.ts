@@ -8,3 +8,4 @@ export * from './icon';
 export * from './userTemplate';
 export * from './createModalPage';
 export * from './modalPageFooter';
+export * from './table';

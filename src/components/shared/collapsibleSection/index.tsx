@@ -9,6 +9,7 @@ type Props = {
   title?: string | null | undefined;
   subtitle?: string | null | undefined;
   className?: string;
+  headerClassName?: string;
   childernClassName?: string;
 };
 
@@ -17,7 +18,9 @@ export function CollapsibleSection({
   title,
   subtitle,
   className = '',
-  childernClassName,
+  headerClassName = '',
+
+  childernClassName = '',
 }: Props) {
   const [open, toggle] = React.useState(false);
 
@@ -27,6 +30,7 @@ export function CollapsibleSection({
       title={title}
       subtitle={subtitle}
       onClick={() => toggle(!open)}
+      headerClassName={classNames('cursor-pointer', headerClassName)}
       childernClassName={open ? childernClassName : '!py-0'}
     >
       <FontAwesomeIcon
@@ -39,7 +43,7 @@ export function CollapsibleSection({
       />
       <div
         className={classNames(
-          'transition-height overflow-hidden ease-in-out duration-300',
+          'transition-height overflow-hidden ease-in-out duration-200',
           { 'h-full': open, 'h-0': !open }
         )}
       >

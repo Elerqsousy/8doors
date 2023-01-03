@@ -7,7 +7,7 @@ type Props = {
   subtitle?: string | null | undefined;
   className?: string;
   childernClassName?: string;
-  closable?: boolean;
+  headerClassName?: string;
   onClick?: () => void;
 };
 
@@ -16,8 +16,8 @@ export function Section({
   title,
   subtitle,
   className = '',
+  headerClassName = '',
   childernClassName = '',
-  closable = false,
   onClick = () => {},
   ...rest
 }: Props) {
@@ -25,13 +25,13 @@ export function Section({
     <div
       {...rest}
       className={classNames(
-        'grow flex px-[15px] mb-[30px] w-full relative',
+        'grow flex px-[15px] mb-[30px] w-full relative rounded-[.1875rem] overflow-hidden bg-white',
         className
       )}
     >
-      <section className='rounded-[.1875rem] overflow-hidden bg-white w-full grow'>
+      <section className={classNames('w-full grow')}>
         {title?.length && (
-          <SectionHeader onClick={onClick} title={title} subtitle={subtitle} />
+          <SectionHeader onClick={onClick} className={headerClassName} title={title} subtitle={subtitle} />
         )}
         <div
           className={classNames(
