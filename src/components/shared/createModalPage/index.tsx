@@ -1,5 +1,6 @@
 import React from 'react';
 import { ModalPageFooter } from '../modalPageFooter';
+import { useRouter } from 'next/router';
 
 interface Props {
   children?: React.ReactNode;
@@ -10,17 +11,24 @@ export function ModalPage({
   children,
   topRightAction = <React.Fragment />,
 }: Props) {
+  const router = useRouter();
+
   return (
     <div className='stethoscopeBg w-screen h-screen bg-center bg-cover z-[-1] absolute'>
       <div className='flex flex-col justify-between h-full bg-black-dark/50 px-[51.5px] py-[15px] z-[1] lg:px-10'>
         <section className='flex justify-between items-center'>
-          <h1 className='text-base text-white'>8door</h1>
+          <h1
+            className='text-base text-white cursor-pointer'
+            onClick={() => router.push('/')}
+          >
+            8door
+          </h1>
           <div className='flex justify-evenly items-center'>
             {topRightAction}
           </div>
         </section>
         <section className='flex justify-center items-center'>
-        {children}
+          {children}
         </section>
         <ModalPageFooter />
       </div>
