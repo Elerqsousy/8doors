@@ -25,13 +25,18 @@ export function Section({
     <div
       {...rest}
       className={classNames(
-        'grow flex px-[15px] mb-[30px] w-full relative rounded-[.1875rem] overflow-hidden bg-white',
+        'grow flex px-[15px] mb-[30px] w-full relative rounded-[.1875rem] overflow-hidden',
         className
       )}
     >
-      <section className={classNames('w-full grow')}>
+      <section className={classNames('w-full grow bg-white')}>
         {title?.length && (
-          <SectionHeader onClick={onClick} className={headerClassName} title={title} subtitle={subtitle} />
+          <SectionHeader
+            onClick={onClick}
+            className={headerClassName}
+            title={title}
+            subtitle={subtitle}
+          />
         )}
         <div
           className={classNames(

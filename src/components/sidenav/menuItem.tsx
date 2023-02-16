@@ -30,11 +30,12 @@ export default function MenuItem({
         'flex flex-col w-full cursor-pointer text-4 capitalize  ',
         {
           'text-gray-darker': path !== router.asPath,
-          'absolute bottom-0 left-0 bg-gradient-to-r from-slate-100 to-gray-lighter':
+          'absolute left-0 bg-gradient-to-r from-slate-100 to-gray-lighter':
             item.static,
         },
         path === router.asPath && activeStyle
       )}
+      style={{bottom: item.static ? item.static*64-64 : 'none'}}
       onClick={onClick}
     >
       <a
