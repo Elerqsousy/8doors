@@ -7,6 +7,7 @@ import {
   faHome,
   faUser,
   faUserPlus,
+  faClinicMedical,
 } from '@fortawesome/free-solid-svg-icons';
 
 export type menuitemType = {
@@ -15,7 +16,7 @@ export type menuitemType = {
   path: string;
   display?: boolean;
   submenu?: menuItemsType;
-  static?: boolean;
+  static?: number;
 };
 
 export type menuItemsType = menuitemType[];
@@ -28,15 +29,7 @@ export const mainMenuItems: menuItemsType = [
     display: true,
     path: '/',
   },
-  {
-    label: 'Appointments',
-    icon: (
-      <FontAwesomeIcon icon={faCalendarCheck} className='w-[14px] h-[14px]' />
-    ),
-    submenu: [],
-    display: true,
-    path: '/appointments',
-  },
+
   {
     label: 'Doctors',
     icon: <FontAwesomeIcon icon={faUserPlus} className='w-[14px] h-[14px]' />,
@@ -49,97 +42,59 @@ export const mainMenuItems: menuItemsType = [
         path: '/doctors',
         icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
       },
+    ],
+  },
+  {
+    label: 'Clinics',
+    icon: (
+      <FontAwesomeIcon icon={faClinicMedical} className='w-[14px] h-[14px]' />
+    ),
+    display: true,
+    path: '',
+    submenu: [
       {
-        label: 'Add Doctor',
+        label: 'All Clinics',
         display: true,
-        path: '/add-doctor',
-        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
-      },
-      {
-        label: 'Doctor Profile',
-        display: true,
-        path: '/doctor-profile',
+        path: '/select-clinic',
         icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
       },
     ],
   },
   {
-    label: 'Patients',
+    label: 'Login',
     icon: <FontAwesomeIcon icon={faUser} className='w-[14px] h-[14px]' />,
     display: true,
     path: '',
     submenu: [
       {
-        label: 'All Doctors',
+        label: 'Login Page',
         display: true,
-        path: '/dctors',
+        path: '/login',
         icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
       },
       {
-        label: 'Add Doctor',
+        label: 'SignUp Page',
         display: true,
-        path: '/add-dotor',
+        path: '/signup',
         icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
       },
       {
-        label: 'Doctor Profile',
+        label: 'Forgot Password',
         display: true,
-        path: '/doctor-prfile',
+        path: '/forget-password',
         icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
       },
     ],
   },
   {
-    label: 'Patients',
-    icon: <FontAwesomeIcon icon={faUser} className='w-[14px] h-[14px]' />,
+    label: '404 Page',
+    icon: (
+      <FontAwesomeIcon icon={faCalendarCheck} className='w-[14px] h-[14px]' />
+    ),
+    submenu: [],
     display: true,
-    path: '',
-    submenu: [
-      {
-        label: 'All Doctors',
-        display: true,
-        path: '/dotors',
-        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
-      },
-      {
-        label: 'Add Doctor',
-        display: true,
-        path: '/add-dctor',
-        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
-      },
-      {
-        label: 'Doctor Profile',
-        display: true,
-        path: '/doctor-pofile',
-        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
-      },
-    ],
-  },
-  {
-    label: 'Patients',
-    icon: <FontAwesomeIcon icon={faUser} className='w-[14px] h-[14px]' />,
-    display: true,
-    path: '',
-    submenu: [
-      {
-        label: 'All Doctors',
-        display: true,
-        path: '/doctrs',
-        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
-      },
-      {
-        label: 'Add Doctor',
-        display: true,
-        path: '/add-dctor',
-        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
-      },
-      {
-        label: 'Doctor Profile',
-        display: true,
-        path: '/doctor-rofile',
-        icon: <FontAwesomeIcon icon={faArrowRightLong} className='w-[10px]' />,
-      },
-    ],
+    path: '/page-not-found',
+    static: 2,
   },
   {
     label: 'Configuration',
@@ -147,6 +102,6 @@ export const mainMenuItems: menuItemsType = [
     submenu: [],
     display: true,
     path: '/configuration',
-    static: true,
+    static: 1,
   },
 ];

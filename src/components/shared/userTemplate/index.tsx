@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Image from 'next/image';
 
 type Props = {
   title: string;
@@ -29,7 +30,7 @@ export function UserTemplate({
         )}
       >
         {img ? (
-          <img className='w-full h-auto' src={img} alt='' />
+          <Image className='w-full h-auto' width={100} height={100} src={img} alt='' />
         ) : (
           <span className='text-white text-lg font-medium'>{title?.charAt(0)}</span>
         )}

@@ -34,7 +34,7 @@ function SideNav({ toggle, setToggle }: SideNavProps) {
           <div className={`${styles.imgContainer} rounded-full`}>
             <Doctor style={{ width: 80, height: 80 }} />
           </div>
-          <h2 className='text-center'>Dr. Dagi</h2>
+          <h2 className='text-center'>Riz</h2>
           <h5 className='text-center'>Neurologist</h5>
         </div>
         <h4 className='mt-[15px] py-2  text-gray-darker font-bold text-[11px]'>
